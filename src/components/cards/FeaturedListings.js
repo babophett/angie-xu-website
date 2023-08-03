@@ -8,6 +8,9 @@ import { ReactComponent as PriceIcon } from "feather-icons/dist/icons/dollar-sig
 import { ReactComponent as LocationIcon } from "feather-icons/dist/icons/map-pin.svg";
 import { ReactComponent as ChevronLeftIcon } from "feather-icons/dist/icons/chevron-left.svg";
 import { ReactComponent as ChevronRightIcon } from "feather-icons/dist/icons/chevron-right.svg";
+import walnutListing from "../../images/Listings/walnut.jpg"
+import franklinListing from "../../images/Listings/franklin.jpg"
+import stanton1Listing from "../../images/Listings/stanton1.jpg"
 
 const Container = tw.div`relative`;
 const Content = tw.div`max-w-screen-xl mx-auto py-16 lg:py-20`;
@@ -24,6 +27,7 @@ const ControlButton = styled(PrimaryButtonBase)`
 const PrevButton = tw(ControlButton)``;
 const NextButton = tw(ControlButton)``;
 
+
 const CardSlider = styled(Slider)`
   ${tw`mt-16`}
   .slick-track { 
@@ -33,26 +37,26 @@ const CardSlider = styled(Slider)`
     ${tw`h-auto flex justify-center mb-1`}
   }
 `;
-const Card = tw.div`h-full flex! flex-col sm:border max-w-sm sm:rounded-tl-4xl sm:rounded-br-5xl relative focus:outline-none`;
+const Card = tw.div`h-full flex flex-col sm:border max-w-sm sm:rounded-tl-4xl sm:rounded-br-5xl relative focus:outline-none`;
 const CardImage = styled.div(props => [
   `background-image: url("${props.imageSrc}");`,
   tw`w-full h-56 sm:h-64 bg-cover bg-center rounded sm:rounded-none sm:rounded-tl-4xl`
 ]);
 
-const TextInfo = tw.div`py-6 sm:px-10 sm:py-6`;
+const TextInfo = tw.div` py-6 sm:px-10 sm:py-6 flex flex-col items-center justify-center`;
 const TitleReviewContainer = tw.div`flex flex-col sm:flex-row sm:justify-between sm:items-center`;
-const Title = tw.h5`text-2xl font-bold`;
-
+const Title = tw.h5`text-xl font-bold`;
+const Inquire = tw.a`w-full`
 const RatingsInfo = styled.div`
   ${tw`flex items-center sm:ml-4 mt-2 sm:mt-0`}
   svg {
     ${tw`w-6 h-6 text-yellow-500 fill-current`}
   }
 `;
-const Rating = tw.span`ml-2 font-bold`;
+const House = tw.span`ml-2 font-bold`;
 
-const Description = tw.p`text-sm leading-loose mt-2 sm:mt-4`;
-
+const Description = tw.p`mt-3`
+const ExpandButton = tw.button`self-start mt-2 text-primary-500 font-bold`
 const SecondaryInfoContainer = tw.div`flex flex-col sm:flex-row mt-2 sm:mt-4`;
 const IconWithText = tw.div`flex items-center mr-6 my-2 sm:my-0`;
 const IconContainer = styled.div`
@@ -67,6 +71,13 @@ const PrimaryButton = tw(PrimaryButtonBase)`mt-auto sm:text-lg rounded-none w-fu
 export default () => {
   // useState is used instead of useRef below because we want to re-render when sliderRef becomes available (not null)
   const [sliderRef, setSliderRef] = useState(null);
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const handleToggleExpand = () => {
+    setIsExpanded(!isExpanded);
+  };
+  
+
   const sliderSettings = {
     arrows: false,
     slidesToShow: 3,
@@ -90,37 +101,30 @@ export default () => {
   /* Change this according to your needs */
   const cards = [
     {
-      imageSrc: "https://images.unsplash.com/photo-1571896349842-33c89424de2d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=1024&w=768&q=80",
-      title: "122 John Dr",
-      description: "Lorem ipsum dolor sit amet, consectur dolori adipiscing elit, sed do eiusmod tempor nova incididunt ut labore et dolore magna aliqua.",
-      locationText: "Rome, Italy",
-      pricingText: "USD 39/Day",
-      rating: "$300,000",
+      imageSrc: walnutListing,
+      title: "116 Walnut Dr",
+      description: "If you're looking for a very well-loved and immaculately maintained home, LOOK NO FURTHER! Located near the airport, major highways, Robinson Mall shops, and just a short drive from the city, this house has it all. The first floor features an entry, formal dining room, living room, and an expansive area with a chef-inspired kitchen. It boasts stainless steel appliances, ample counter space, custom cabinetry, and a large center island that can accommodate almost 8 people - perfect for hosting family and friends. From here, you can step out onto a spacious deck with an awning cover, providing the ideal setting for barbecues or simply relaxing in a serene outdoor space. Upstairs offers a large Master with a walk-in closet, three additional nice-sized bedrooms, two full baths, and a second floor laundry. A partially finished basement with rough-in plumbing awaits your personal touch. This home is ready for its new owners to move in and create lasting memories from day one.",
+      locationText: "McKees Rock, PA",
+      pricingText: "428,900",
+      House: "3 Beds, 4 Baths",
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=1024&w=768&q=80",
-      title: "843 John Drive",
-      description: "Lorem ipsum dolor sit amet, consectur dolori adipiscing elit, sed do eiusmod tempor nova incididunt ut labore et dolore magna aliqua.",
-      locationText: "Ibiza, Spain",
-      pricingText: "USD 50/Day",
-      rating: "$200,000",
+      imageSrc: franklinListing,
+      title: "113 Franklin Ave",
+      description: "Calling all INVESTORS!!! Bring this beauty back to its glory! A Large covered porch welcome you. The first floor features spacious living room, dinning room, and eat-in kitchen. Upstairs, you will find 3 spacious bedrooms, and an attic space that could be a 4th bedroom. New electrical  panel and water meter installed. Lots of possibilities with this one.",
+      locationText: "Pittsburgh, PA",
+      pricingText: "35,000",
+      House: "4 Beds, 1 Bath",
     },
     {
-      imageSrc: "https://images.unsplash.com/photo-1549294413-26f195200c16?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=1024&w=768&q=80",
-      title: "420 John Drive",
-      description: "Lorem ipsum dolor sit amet, consectur dolori adipiscing elit, sed do eiusmod tempor nova incididunt ut labore et dolore magna aliqua.",
-      locationText: "Palo Alto, CA",
-      pricingText: "USD 19/Day",
-      rating: "$500,000",
+      imageSrc: stanton1Listing,
+      title: "7709-7721 Stanton Ave.",
+      description: "A fantastic opportunity to purchase a FULLY OCCUPIED 7-unit brick row building in Swissvale. Each unit has a parcel ID number and an excellent rental history. The layout of all units is the same. The first floor features a living room with a fireplace, kitchen, formal dining room and high ceilings throughout the house. The second floor boasts two spacious bedrooms and a full bathroom. The third bedroom is located in the lower level, along with a half bath and a laundry area that has a walkout to a private patio. Units 7709, 7715, and 7721 have been completely remodeled, with granite countertops, modern cabinets, new paint, laminated flooring, new vanities and  showers , gas stoves, refrigerators, washers and dryers. These units also have a finished lower level with entrance. The other four units could use some TLC- some upgrades will go a long way here to drive rent and ARV. Convenient location minutes to downtown, public transportation and Edgewood Town Center.",
+      locationText: "Pittsburgh, PA",
+      pricingText: "699,950",
+      House: "21 Beds, 14 Baths",
     },
-    {
-      imageSrc: "https://images.unsplash.com/photo-1571770095004-6b61b1cf308a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&h=1024&w=768&q=80",
-      title: "50 John Drive",
-      description: "Lorem ipsum dolor sit amet, consectur dolori adipiscing elit, sed do eiusmod tempor nova incididunt ut labore et dolore magna aliqua.",
-      locationText: "Arizona, RAK",
-      pricingText: "USD 99/Day",
-      rating: "$100,000",
-    },
+    
   ]
 
   return (
@@ -142,7 +146,7 @@ export default () => {
                   <Title>{card.title}</Title>
                   <RatingsInfo>
                     
-                    <Rating>{card.rating}</Rating>
+                    <House>{card.House}</House>
                   </RatingsInfo>
                 </TitleReviewContainer>
                 <SecondaryInfoContainer>
@@ -159,9 +163,20 @@ export default () => {
                     <Text>{card.pricingText}</Text>
                   </IconWithText>
                 </SecondaryInfoContainer>
-                <Description>{card.description}</Description>
+                <Description>
+                {isExpanded ? card.description: `${card.description.substring(0,200)}`}
+                    
+                </Description>
+                <ExpandButton
+                          css={tw`text-blue-500 mt-2 cursor-pointer`}
+                          onClick={handleToggleExpand}
+                        >
+                          {isExpanded ? 'See Less' : 'See More'}
+                    </ExpandButton>
               </TextInfo>
-              <PrimaryButton>Inquire</PrimaryButton>
+              <PrimaryButton>
+                <Inquire href="contact">Inquire</Inquire>
+              </PrimaryButton>     
             </Card>
           ))}
         </CardSlider>

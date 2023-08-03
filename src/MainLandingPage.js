@@ -4,7 +4,7 @@ import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import tw from "twin.macro";
 import { SectionHeading as HeadingBase } from "components/misc/Headings";
 import { SectionDescription as DescriptionBase } from "components/misc/Typography";
-import ThreeColSlider from "components/cards/ThreeColSlider";
+import ThreeColSlider from "components/cards/FeaturedListings";
 import { ReactComponent as CheckboxIcon } from "feather-icons/dist/icons/check-circle.svg";
 import Testimonials from "components/testimonials/SimplePrimaryBackground";
 import AngieXuImageSrc from "images/angie.png";

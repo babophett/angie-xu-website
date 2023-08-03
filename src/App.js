@@ -6,14 +6,14 @@ import { css } from "styled-components/macro"; //eslint-disable-line
 
 import ComponentRenderer from "ComponentRenderer.js";
 import MainLandingPage from "MainLandingPage.js";
-import Properties from "components/blogs/ThreeColSimpleWithImage";
-import Contact from "components/forms/TwoColContactUsWithIllustration";
+import Properties from "components/blogs/Properties";
+import Contact from "components/forms/ContactDetails";
 import tw from "twin.macro";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { LogoLink } from "components/headers/light.js";
 import logo from "images/logo.png";
 import { Container, Content2Xl } from "components/misc/Layouts";
-import Footer from "components/footers/MiniCenteredFooter";
+import Footer from "components/footers/AngieFooter";
 const Row = tw.div`flex`;
 const NavRow = tw(Row)` mx-8 mt-4 flex flex-col lg:flex-row items-center justify-between`;
 const NavLink = tw.a`lg:mt-0 transition duration-300 font-medium pb-1 border-b-2 mr-12 text-gray-700 border-gray-400 hocus:border-[#FD665E]`;

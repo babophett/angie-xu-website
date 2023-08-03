@@ -62,14 +62,14 @@ import WithStatsAndImageFeatures from "components/features/TwoColSingleFeatureWi
 import WithStatsAndImage2Features from "components/features/TwoColSingleFeatureWithStats2.js";
 import VerticalWithAlternateImageAndTextFeatures from "components/features/VerticalWithAlternateImageAndText.js";
 
-import SliderCards from "components/cards/ThreeColSlider.js";
+import SliderCards from "components/cards/FeaturedListings.js";
 import TrendingCards from "components/cards/TwoTrendingPreviewCardsWithImage.js";
 import PortfolioCards from "components/cards/PortfolioTwoCardsWithImage.js";
 import TabGridCards from "components/cards/TabCardGrid.js";
 import ProfileThreeColGridCards from "components/cards/ProfileThreeColGrid.js"
 import ThreeColContactDetailsCards from "components/cards/ThreeColContactDetails.js"
 
-import ThreeColSimpleWithImageBlog from "components/blogs/ThreeColSimpleWithImage.js";
+import ThreeColSimpleWithImageBlog from "components/blogs/Properties.js";
 import ThreeColSimpleWithImageAndDashedBorderBlog from "components/blogs/ThreeColSimpleWithImageAndDashedBorder.js";
 import PopularAndRecentPostsBlog from "components/blogs/PopularAndRecentBlogPosts.js";
 import GridWithFeaturedPostBlog from "components/blogs/GridWithFeaturedPost.js";
@@ -86,7 +86,7 @@ import TwoColumnPrimaryBackgroundFAQS from "components/faqs/TwoColumnPrimaryBack
 
 import SimpleContactUsForm from "components/forms/SimpleContactUs.js";
 import SimpleSubscribeNewsletterForm from "components/forms/SimpleSubscribeNewsletter.js";
-import TwoColContactUsForm from "components/forms/TwoColContactUsWithIllustration.js";
+import TwoColContactUsForm from "components/forms/ContactDetails.js";
 import TwoColContactUsFullForm from "components/forms/TwoColContactUsWithIllustrationFullForm.js";
 
 import GetStartedCTA from "components/cta/GetStarted.js";
@@ -97,7 +97,7 @@ import SimpleFiveColumnFooter from "components/footers/SimpleFiveColumn.js";
 import FiveColumnWithInputFormFooter from "components/footers/FiveColumnWithInputForm.js";
 import FiveColumnWithBackgroundFooter from "components/footers/FiveColumnWithBackground.js";
 import FiveColumnDarkFooter from "components/footers/FiveColumnDark.js";
-import MiniCenteredFooter from "components/footers/MiniCenteredFooter.js";
+import MiniCenteredFooter from "components/footers/AngieFooter.js";
 
 
 export const components = {
