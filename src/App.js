@@ -25,13 +25,13 @@ export default function App() {
 
   return (
     <>
+    
       <GlobalStyles />
       <Container tw="bg-gray-100 mx-8 mt-8 pt-8 px-8">
         <Content2Xl>
             <NavRow>
                   <LogoLink href="/">
                     <img src={logo} alt="" />
-                    
                   </LogoLink>
                   <div tw="flex flex-wrap justify-center lg:justify-end items-center -mr-12">
                     <NavLink href="/properties">

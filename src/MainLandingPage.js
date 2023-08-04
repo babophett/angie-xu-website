@@ -35,12 +35,7 @@ const Image = tw.img`max-w-full rounded-t sm:rounded `;
 const SectionContainer = tw(Row)`flex-col lg:flex-row justify-between items-center pt-10 lg:pt-12 pb-16 max-w-screen-2xl mx-auto flex-wrap`;
 const SectionHeading = tw(HeadingBase)`text-left text-primary-900`;
 const SectionDescription = tw(DescriptionBase)`text-left text-gray-600 max-w-4xl`;
-const AngieBio = `Angie Xu is an esteemed real estate professional with a deep-rooted passion for helping clients navigate the vibrant Pittsburgh housing market. Angie possesses an intimate understanding of the city's neighborhoods, their unique characteristics, and the evolving trends in the local market. Her insider's perspective allows her to tailor her approach to each client's specific needs, ensuring their real estate journey is seamless and successful.
-\nAngie's exceptional work ethic and commitment to excellence have earned her a stellar reputation among both buyers and sellers. Her clients consistently praise her for her integrity, professionalism, and ability to deliver results. Whether she is guiding first-time homebuyers through the exciting process of finding their dream home or strategizing marketing plans for sellers, Angie's personalized approach and unparalleled customer service always leave a lasting impression.
-\nBeyond her expertise in the Pittsburgh real estate market, Angie is a genuine advocate for her community. She actively engages with local organizations and initiatives that foster growth, development, and the overall well-being of Pittsburgh. Her passion for the city extends beyond her professional pursuits, as she strives to make a positive impact on the lives of its residents.
-\nWhen Angie isn't busy assisting clients or immersing herself in the world of real estate, she enjoys exploring Pittsburgh's diverse culinary scene, hiking in its beautiful parks, and embracing the rich arts and cultural offerings the city has to offer. Her love for her hometown shines through in her work, as she goes above and beyond to help others discover their place within Pittsburgh's vibrant real estate landscape.
-\nWith Angie Xu as your trusted real estate advisor, you can rest assured knowing you have a dedicated professional by your side, ready to turn your real estate dreams into reality.`
-
+const paragraphLine2 = tw.p`mt-2`
 
 export default ({
   features = null,
@@ -102,7 +97,11 @@ export default ({
             <SectionHeading>Meet Angie</SectionHeading>
             <div className="flex items-center">
                 <SectionDescription>
-                      {AngieBio}
+                    <SectionDescription>Angie Xu is an esteemed real estate professional with a deep-rooted passion for helping clients navigate the vibrant Pittsburgh housing market. Angie possesses an intimate understanding of the city's neighborhoods, their unique characteristics, and the evolving trends in the local market. Her insider's perspective allows her to tailor her approach to each client's specific needs, ensuring their real estate journey is seamless and successful.</SectionDescription>
+                    <SectionDescription>Angie's exceptional work ethic and commitment to excellence have earned her a stellar reputation among both buyers and sellers. Her clients consistently praise her for her integrity, professionalism, and ability to deliver results. Whether she is guiding first-time homebuyers through the exciting process of finding their dream home or strategizing marketing plans for sellers, Angie's personalized approach and unparalleled customer service always leave a lasting impression.</SectionDescription>
+                    <SectionDescription>Beyond her expertise in the Pittsburgh real estate market, Angie is a genuine advocate for her community. She actively engages with local organizations and initiatives that foster growth, development, and the overall well-being of Pittsburgh. Her passion for the city extends beyond her professional pursuits, as she strives to make a positive impact on the lives of its residents.</SectionDescription>
+                    <SectionDescription>When Angie isn't busy assisting clients or immersing herself in the world of real estate, she enjoys exploring Pittsburgh's diverse culinary scene, hiking in its beautiful parks, and embracing the rich arts and cultural offerings the city has to offer. Her love for her hometown shines through in her work, as she goes above and beyond to help others discover their place within Pittsburgh's vibrant real estate landscape.</SectionDescription>
+                    <SectionDescription>With Angie Xu as your trusted real estate advisor, you can rest assured knowing you have a dedicated professional by your side, ready to turn your real estate dreams into reality.</SectionDescription>
                 </SectionDescription>
                 
             </div>
