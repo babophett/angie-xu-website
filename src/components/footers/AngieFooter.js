@@ -52,7 +52,7 @@ export default () => {
           </LogoContainer>
           <LinksContainer>
             <Link href="/properties">Properties</Link>
-            <Link href="a">Home Search</Link>
+            <Link href="https://angiexu.kw.com/search/PA/Pittsburgh?searchedText=Pittsburgh%2C%20PA%2C%20US">Home Search</Link>
             <Link href="/contact">Contact</Link>
           </LinksContainer>
           <SocialLinksContainer>
