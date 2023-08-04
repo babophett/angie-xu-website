@@ -1,11 +1,13 @@
-import React from "react";
+import React, {useState} from "react";
 import tw from "twin.macro";
 import styled from "styled-components";
+
 import { SectionHeading, Subheading as SubheadingBase } from "components/misc/Headings.js";
-import { PrimaryButton as PrimaryButtonBase } from "components/misc/Buttons.js";
 import {ReactComponent as WeChatIcon} from "../../images/wechat.svg"
 import {ReactComponent as FacebookIcon} from "../../images/facebook-icon.svg"
 import Angie from "../../images/angie.png"
+import ImageModal from "../WechatModal";
+import Kitchen from "../../images/kitchen.jpg";
 const Container = tw.div`relative sm:mx-10`;
 const TwoColumn = tw.div`flex flex-col md:flex-row justify-between max-w-screen-xl mx-auto py-20 md:py-24`;
 const Column = tw.div`w-full max-w-md mx-auto md:max-w-none md:mx-0`;
@@ -21,18 +23,21 @@ const SocialLink = styled.a`
     ${tw`w-10 h-10`}
   }
 `;
+const Wechat= styled.button`
+  ${tw`cursor-pointer inline-block text-gray-100 hover:text-gray-500 transition duration-300 mx-4`}
+  svg {
+    ${tw`w-10 h-10`}
+  }
+`;
 const TextContent = tw.div`lg:py-8 text-center md:text-left`;
-
 const Subheading = tw(SubheadingBase)`text-center md:text-left`;
 const Heading = tw(SectionHeading)`mt-4 font-black text-left text-3xl sm:text-4xl lg:text-5xl text-center md:text-left leading-tight`;
 const Description = tw.p`mt-4 text-center md:text-left text-sm md:text-base lg:text-lg font-medium leading-relaxed text-secondary-100`
 const ContactHeading = tw(SectionHeading)` font-normal mt-4 text-left text-white text-xl sm:text-xl lg:text-xl`;
-const Form = tw.form`mt-8 md:mt-10 text-sm flex flex-col lg:flex-row`
-const Input = tw.input`border-2 px-5 py-3 rounded focus:outline-none font-medium transition duration-300 hocus:border-primary-500`
 const Separator = tw.div` mt-2 mr-20 w-[400px] h-px bg-white`;
-const ContactInformation = tw.p`text-white mt-2 `
-const SubmitButton = tw(PrimaryButtonBase)`inline-block lg:ml-6 mt-6 lg:mt-0`
-const AngieImage= tw.img`ml-16 justify-center`
+const ContactInformation = tw.p`text-white mt-2 `;
+const AngieImage= tw.img`ml-16 justify-center`;
+const KitchenImage = tw.img`mt-4`;
 export default ({
   subheading = "Work with Angie",
   heading = <>Feel free to <span tw="text-primary-500">get in touch</span><wbr/> with me.</>,
@@ -43,7 +48,15 @@ export default ({
   textOnLeft = true,
 }) => {
   // The textOnLeft boolean prop can be used to display either the text on left or right side of the image.
+  const [showModal, setShowModal] = useState(false);
 
+  const handleButtonClick = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
   return (
     <Container>
       <TwoColumn>
@@ -62,11 +75,16 @@ export default ({
                 <ContactInformation>
                     <p>1500 Oxford Drive, Suite 300 Pittsburgh, PA 15241</p>
                 </ContactInformation>
-                <SocialLinksContainer>
-                  <SocialLink href="https://www.wechat.com/">
+                <SocialLinksContainer >
+                  <Wechat onClick={handleButtonClick}>
+                    {showModal && (
+                                  <ImageModal
+                                    onClose={handleCloseModal}
+                                  />
+                      )}
                       <WeChatIcon/>
-                  </SocialLink>
-                  <SocialLink href="https://www.wechat.com/">
+                  </Wechat>
+                  <SocialLink href="https://www.facebook.com/PittsburghRealEstateYuyingXu?hc_ref=ARRtEHi2PdWl5KjoyEY8rZPwfSCR4oco3-KBFyXoHF9as_uMfZPUlaB7tUSzV615oTY&fref=nf&__xts__[0]=68.ARAdyJBOzMjxx-wGbQb_Msxcx2WNWETbP-4ZPLqLoMhH8UpqpALcKuUkbYknCqU8SOZ1TtUfTdZf9EKJbxHO-9lSeMdV_qsXIKK3nqnTZT8NMYSs_l8BO7AfIH2ae6DNtwSApna8aTnW_XgJkpjQQRvKhUmj4ctX3GpKTBIKIjNBBaJw8vOGcDe2_4wW-GmnxaagqxmvoDIvqHXenrC5FyLN9-TWXjFPmr7p4KvtgC5TXaRmIG-Ye-M8xB829bZTJDyaRiRvncFDYfAY4msOaacofqecOXdtB0RZpUNV9BUYR9MO91E">
                       <FacebookIcon/>
                   </SocialLink>
                 </SocialLinksContainer>
@@ -78,12 +96,9 @@ export default ({
             {subheading && <Subheading>{subheading}</Subheading>}
             <Heading>{heading}</Heading>
             <Description>{description}</Description>
-            <Form action={formAction} method={formMethod}>
-              <Input type="email" name="email" placeholder="Your Email Address" />
-              <SubmitButton type="submit">{submitButtonText}</SubmitButton>
-            </Form>
+            
           </TextContent>
-
+          <KitchenImage src={Kitchen} alt="kitchen"/>           
           
         </TextColumn>
         

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Link} from 'react-router-dom';
 import AnimationRevealPage from "helpers/AnimationRevealPage.js";
 import tw from "twin.macro";
 import { SectionHeading as HeadingBase } from "components/misc/Headings";
@@ -23,10 +23,7 @@ const Description = tw(
   DescriptionBase
 )`mt-4 text-center lg:text-left lg:text-base text-gray-700 max-w-lg mx-auto lg:mx-0`;
 const Actions = tw.div`flex flex-col sm:flex-row justify-center lg:justify-start`;
-const ActionButton = tw(
-  AnchorLink
-)`px-8 py-3 font-bold rounded bg-primary-500 text-gray-100 hocus:bg-primary-700 hocus:text-gray-200 focus:shadow-outline focus:outline-none transition duration-300 mt-12 inline-block tracking-wide text-center px-10 py-4 font-semibold tracking-normal`;
-const PrimaryButton = tw(ActionButton)``;
+const PrimaryButton = tw.button`px-8 py-3 font-bold rounded bg-primary-500 text-gray-100 hocus:bg-primary-700 hocus:text-gray-200 focus:shadow-outline focus:outline-none transition duration-300 mt-12 inline-block tracking-wide text-center px-10 py-4 font-semibold tracking-normal`;
 const FeatureList = tw.ul`mt-6 leading-loose flex flex-wrap max-w-xl mx-auto lg:mx-0`;
 const Feature = tw.li`mt-2 flex items-center flex-shrink-0 w-full sm:w-1/2 justify-center lg:justify-start`;
 const FeatureIcon = tw(CheckboxIcon)`w-5 h-5 text-primary-500`;
@@ -47,9 +44,8 @@ const AngieBio = `Angie Xu is an esteemed real estate professional with a deep-r
 
 export default ({
   features = null,
-  primaryButtonUrl = "https://angiexu.kw.com/",
+  primaryButtonUrl = "/properties",
   primaryButtonText = "Search All Homes",
-  buttonRoundedCss = "",
   heading = "Find Your Dream Home",
   description = "Work with a Pittsburgh Real Estate Expert"
 }) => {
@@ -86,9 +82,11 @@ export default ({
                 ))}
               </FeatureList>
               <Actions>
-                <PrimaryButton href={primaryButtonUrl} css={buttonRoundedCss}>
+                <Link to="/properties">
+                <PrimaryButton to="/properties">
                   {primaryButtonText}
                 </PrimaryButton>
+                </Link>
               </Actions> 
             </TextColumn>
             <ImageColumn>

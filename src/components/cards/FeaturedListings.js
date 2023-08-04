@@ -106,7 +106,7 @@ export default () => {
       description: "If you're looking for a very well-loved and immaculately maintained home, LOOK NO FURTHER! Located near the airport, major highways, Robinson Mall shops, and just a short drive from the city, this house has it all. The first floor features an entry, formal dining room, living room, and an expansive area with a chef-inspired kitchen. It boasts stainless steel appliances, ample counter space, custom cabinetry, and a large center island that can accommodate almost 8 people - perfect for hosting family and friends. From here, you can step out onto a spacious deck with an awning cover, providing the ideal setting for barbecues or simply relaxing in a serene outdoor space. Upstairs offers a large Master with a walk-in closet, three additional nice-sized bedrooms, two full baths, and a second floor laundry. A partially finished basement with rough-in plumbing awaits your personal touch. This home is ready for its new owners to move in and create lasting memories from day one.",
       locationText: "McKees Rock, PA",
       pricingText: "428,900",
-      House: "3 Beds, 4 Baths",
+      House: "4 Beds, 2.5 Baths",
     },
     {
       imageSrc: franklinListing,
@@ -118,7 +118,7 @@ export default () => {
     },
     {
       imageSrc: stanton1Listing,
-      title: "7709-7721 Stanton Ave.",
+      title: "7709-7721 Stanton Ave",
       description: "A fantastic opportunity to purchase a FULLY OCCUPIED 7-unit brick row building in Swissvale. Each unit has a parcel ID number and an excellent rental history. The layout of all units is the same. The first floor features a living room with a fireplace, kitchen, formal dining room and high ceilings throughout the house. The second floor boasts two spacious bedrooms and a full bathroom. The third bedroom is located in the lower level, along with a half bath and a laundry area that has a walkout to a private patio. Units 7709, 7715, and 7721 have been completely remodeled, with granite countertops, modern cabinets, new paint, laminated flooring, new vanities and  showers , gas stoves, refrigerators, washers and dryers. These units also have a finished lower level with entrance. The other four units could use some TLC- some upgrades will go a long way here to drive rent and ARV. Convenient location minutes to downtown, public transportation and Edgewood Town Center.",
       locationText: "Pittsburgh, PA",
       pricingText: "699,950",
