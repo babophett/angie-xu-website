@@ -78,7 +78,7 @@ import TwoColumnWithImageTestimonial from "components/testimonials/TwoColumnWith
 import TwoColumnWithImageAndProfilePictureReviewTestimonial from "components/testimonials/TwoColumnWithImageAndProfilePictureReview.js";
 import TwoColumnWithImageAndRatingTestimonial from "components/testimonials/TwoColumnWithImageAndRating.js";
 import ThreeColumnWithProfileImageTestimonial from "components/testimonials/ThreeColumnWithProfileImage.js";
-import SimplePrimaryBackgroundTestimonial from "components/testimonials/SimplePrimaryBackground.js";
+import SimplePrimaryBackgroundTestimonial from "components/testimonials/Testimonials.js";
 
 import SimpleWithSideImageFAQS from "components/faqs/SimpleWithSideImage.js";
 import SingleColFAQS from "components/faqs/SingleCol.js";
