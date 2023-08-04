@@ -14,7 +14,7 @@ import { LogoLink } from "components/headers/light.js";
 import logo from "images/logo.png";
 import { Container, Content2Xl } from "components/misc/Layouts";
 import Footer from "components/footers/AngieFooter";
-const Row = tw.div`flex`;
+const Row = tw.div`flex sm:items-center`;
 const NavRow = tw(Row)` mx-8 mt-4 flex flex-col lg:flex-row items-center justify-between`;
 const NavLink = tw.a`lg:mt-0 transition duration-300 font-medium pb-1 border-b-2 mr-12 text-gray-700 border-gray-400 hocus:border-[#FD665E]`;
 
