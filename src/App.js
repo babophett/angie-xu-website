@@ -16,8 +16,8 @@ import { Container, Content2Xl } from "components/misc/Layouts";
 import Footer from "components/footers/AngieFooter";
 const Row = tw.div`flex sm:items-center`;
 const NavRow = tw(Row)` mx-8 mt-4 flex flex-col lg:flex-row items-center justify-between`;
-const NavLink = tw.a`lg:mt-0 transition duration-300 font-medium pb-1 border-b-2 mr-12 text-gray-700 border-gray-400 hocus:border-[#FD665E]`;
-const HomeNavLink = tw.a`lg:mt-0 sm:text-sm transition duration-300 font-medium pb-1 border-b-2 mr-12 text-gray-700 border-gray-400 hocus:border-[#FD665E]`;
+const NavLink = tw.a`lg:mt-0 sm:text-sm md:text-sm transition duration-300 font-medium pb-1 border-b-2 mr-12 text-gray-700 border-gray-400 hocus:border-[#FD665E]`;
+
 export default function App() {
   // If you want to disable the animation just use the disabled `prop` like below on your page's component
   // return <AnimationRevealPage disabled>xxxxxxxxxx</AnimationRevealPage>;
@@ -37,9 +37,9 @@ export default function App() {
                     <NavLink href="/properties">
                       Properties
                     </NavLink>
-                    <HomeNavLink href="https://angiexu.kw.com/">
+                    <NavLink href="https://angiexu.kw.com/">
                       Home Search
-                    </HomeNavLink>
+                    </NavLink>
                     <NavLink href="/contact">
                       Contact
                     </NavLink>
