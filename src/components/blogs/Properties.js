@@ -25,7 +25,7 @@ import Stratford from "../../images/Listings/Strabane.jpg";
 import Lorlita from "../../images/Listings/Lorlita.jpg";
 import Bryn from "../../images/Listings/Bryn.jpg";
 import Cardinal from "../../images/Listings/Cardinal.jpg";
-import PropertyModal from "./Property.js";
+
 
 const Container = tw.div`relative`;
 const Content = tw.div`flex flex-col items-center max-w-screen-xl mx-auto py-20 lg:py-24`;
@@ -47,7 +47,7 @@ const Represented = tw.p`mt-2 text-sm text-primary-500 font-bold`;
 const PaginationButton = tw.button`mx-1 px-3 py-2 text-white bg-primary-300 rounded-lg transition-colors duration-300 hover:bg-gray-400 focus:outline-none focus:ring`
 const Pagination = tw.div`justify-center items-center mt-8`
 export default () => {
-  const [showModal, setShowModal] = useState(false);
+  /*const [showModal, setShowModal] = useState(false);
 
   const handleButtonClick = () => {
     setShowModal(true);
@@ -56,6 +56,7 @@ export default () => {
   const handleCloseModal = () => {
     setShowModal(false);
   };
+  */
   const currentListings = [
     {
       imageSrc: walnutListing,
@@ -252,9 +253,9 @@ export default () => {
                 <Address>{post.Address}</Address>
                 <Title>{post.pricingText}</Title>
                 <Title>{post.House}</Title>
-                <Learn onClick={handleButtonClick}>
-                  {showModal && (<PropertyModal imageSrc={post.imageSrc} address={post.address} description={post.description} location={post.locationText} pricing={post.pricingText} bedsBaths={post.House} onClose={handleCloseModal}/>)}
-                  Learn More
+                <Learn>
+                {//showModal && (<PropertyModal imageSrc={post.imageSrc} address={post.address} description={post.description} location={post.locationText} pricing={post.pricingText} bedsBaths={post.House} onClose={handleCloseModal}/>)}
+}Learn More
                   </Learn>
               </Card>
             </Column>
