@@ -25,6 +25,7 @@ import Stratford from "../../images/Listings/Strabane.jpg";
 import Lorlita from "../../images/Listings/Lorlita.jpg";
 import Bryn from "../../images/Listings/Bryn.jpg";
 import Cardinal from "../../images/Listings/Cardinal.jpg";
+import PropertyModal from "./Property.js";
 
 const Container = tw.div`relative`;
 const Content = tw.div`flex flex-col items-center max-w-screen-xl mx-auto py-20 lg:py-24`;
@@ -41,11 +42,20 @@ const Image = styled.div(props => [
 ]);
 const Address = tw.div`mt-4 text-secondary-100 font-bold text-sm`;
 const Title = tw.h4`mt-2 leading-relaxed font-bold text-lg`;
-const Link = tw.a`inline-block mt-2 text-sm text-primary-500 font-bold cursor-pointer transition duration-300 border-b-2 border-transparent hover:border-primary-500`;
+const Learn = tw.button`inline-block mt-2 text-sm text-primary-500 font-bold cursor-pointer transition duration-300 border-b-2 border-transparent hover:border-primary-500`;
 const Represented = tw.p`mt-2 text-sm text-primary-500 font-bold`;
 const PaginationButton = tw.button`mx-1 px-3 py-2 text-white bg-primary-300 rounded-lg transition-colors duration-300 hover:bg-gray-400 focus:outline-none focus:ring`
 const Pagination = tw.div`justify-center items-center mt-8`
 export default () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleButtonClick = () => {
+    setShowModal(true);
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+  };
   const currentListings = [
     {
       imageSrc: walnutListing,
@@ -53,7 +63,7 @@ export default () => {
       description: "If you're looking for a very well-loved and immaculately maintained home, LOOK NO FURTHER! Located near the airport, major highways, Robinson Mall shops, and just a short drive from the city, this house has it all. The first floor features an entry, formal dining room, living room, and an expansive area with a chef-inspired kitchen. It boasts stainless steel appliances, ample counter space, custom cabinetry, and a large center island that can accommodate almost 8 people - perfect for hosting family and friends. From here, you can step out onto a spacious deck with an awning cover, providing the ideal setting for barbecues or simply relaxing in a serene outdoor space. Upstairs offers a large Master with a walk-in closet, three additional nice-sized bedrooms, two full baths, and a second floor laundry. A partially finished basement with rough-in plumbing awaits your personal touch. This home is ready for its new owners to move in and create lasting memories from day one.",
       locationText: "McKees Rock, PA",
       pricingText: "$428,900",
-      House: "3 Beds, 4 Baths",
+      House: "4 Beds, 2.5 Baths",
     },
     {
       imageSrc: franklinListing,
@@ -242,7 +252,10 @@ export default () => {
                 <Address>{post.Address}</Address>
                 <Title>{post.pricingText}</Title>
                 <Title>{post.House}</Title>
-                <Link href={post.url}>Learn More</Link>
+                <Learn onClick={handleButtonClick}>
+                  {showModal && (<PropertyModal imageSrc={post.imageSrc} address={post.address} description={post.description} location={post.locationText} pricing={post.pricingText} bedsBaths={post.House} onClose={handleCloseModal}/>)}
+                  Learn More
+                  </Learn>
               </Card>
             </Column>
           ))}
