@@ -34,7 +34,7 @@ const Image = tw.img`max-w-full rounded-t sm:rounded `;
 
 const SectionContainer = tw(Row)`flex-col lg:flex-row justify-between items-center pt-10 lg:pt-12 pb-16 max-w-screen-2xl mx-auto flex-wrap`;
 const SectionHeading = tw(HeadingBase)`text-left text-primary-900`;
-const SectionDescription = tw(DescriptionBase)`text-left text-base text-gray-600 max-w-4xl`;
+const SectionDescription = tw(DescriptionBase)`text-left text-lg text-gray-600 max-w-4xl`;
 
 export default ({
   features = null,
