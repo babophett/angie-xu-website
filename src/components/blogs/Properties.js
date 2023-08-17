@@ -25,8 +25,8 @@ import Stratford from "../../images/Listings/Strabane.jpg";
 import Lorlita from "../../images/Listings/Lorlita.jpg";
 import Bryn from "../../images/Listings/Bryn.jpg";
 import Cardinal from "../../images/Listings/Cardinal.jpg";
-
-
+import Morton from "../../images/Listings/Morton.jpg";
+import PropertyModal from "./Property.js";
 const Container = tw.div`relative`;
 const Content = tw.div`flex flex-col items-center max-w-screen-xl mx-auto py-20 lg:py-24`;
 const ThreeColumn = tw.div`flex flex-col items-center lg:items-stretch lg:flex-row flex-wrap`;
@@ -47,16 +47,19 @@ const Represented = tw.p`mt-2 text-sm text-primary-500 font-bold`;
 const PaginationButton = tw.button`mx-1 px-3 py-2 text-white bg-primary-300 rounded-lg transition-colors duration-300 hover:bg-gray-400 focus:outline-none focus:ring`
 const Pagination = tw.div`justify-center items-center mt-8`
 export default () => {
-  /*const [showModal, setShowModal] = useState(false);
-
-  const handleButtonClick = () => {
+  // eslint-disable-next-line no-unused-vars
+  const [showModal, setShowModal] = useState(false);
+  const [clickedPropertyIndex, setClickedPropertyIndex] = useState(null);
+  const handleButtonClick = (index) => {
     setShowModal(true);
+    setClickedPropertyIndex(index);
   };
 
   const handleCloseModal = () => {
     setShowModal(false);
+    setClickedPropertyIndex(null);
   };
-  */
+  
   const currentListings = [
     {
       imageSrc: walnutListing,
@@ -84,6 +87,14 @@ export default () => {
     },
   ];
   const pastListings = [
+    {
+      imageSrc:
+        Morton,
+      Address: "2521 Morton Rd, Pittsburgh, PA 15241",
+      price: "$800,000",
+      represented: "Buyer"
+    },
+    
     {
       imageSrc:
         Westminster,
@@ -253,13 +264,24 @@ export default () => {
                 <Address>{post.Address}</Address>
                 <Title>{post.pricingText}</Title>
                 <Title>{post.House}</Title>
-                <Learn>
-                {//showModal && (<PropertyModal imageSrc={post.imageSrc} address={post.address} description={post.description} location={post.locationText} pricing={post.pricingText} bedsBaths={post.House} onClose={handleCloseModal}/>)}
-}Learn More
+                <Learn onClick={() => handleButtonClick(index)}>
+                
+                 Learn More
                   </Learn>
               </Card>
             </Column>
           ))}
+          {clickedPropertyIndex !== null && (
+        <PropertyModal
+          imageSrc={currentListings[clickedPropertyIndex].imageSrc}
+          address={currentListings[clickedPropertyIndex].Address}
+          description={currentListings[clickedPropertyIndex].description}
+          location={currentListings[clickedPropertyIndex].locationText}
+          pricing={currentListings[clickedPropertyIndex].pricingText}
+          bedsBaths={currentListings[clickedPropertyIndex].House}
+          onClose={handleCloseModal}
+        />
+      )}
         </ThreeColumn>
       </Content>
       <Content>

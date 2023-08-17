@@ -45,7 +45,7 @@ const CardImage = styled.div(props => [
 
 const TextInfo = tw.div` py-6 sm:px-10 sm:py-6 flex flex-col items-center justify-center`;
 const TitleReviewContainer = tw.div`flex flex-col sm:flex-row sm:justify-between sm:items-center`;
-const Title = tw.h5`text-xl font-bold`;
+const Title = tw.h5`text-lg font-bold mr-2`;
 const Inquire = tw.a`w-full`
 const RatingsInfo = styled.div`
   ${tw`flex items-center sm:ml-4 mt-2 sm:mt-0`}
@@ -53,7 +53,7 @@ const RatingsInfo = styled.div`
     ${tw`w-6 h-6 text-yellow-500 fill-current`}
   }
 `;
-const House = tw.span`ml-2 font-bold`;
+const House = tw.span`ml-2 text-sm font-bold`;
 
 const Description = tw.p`mt-3`
 const ExpandButton = tw.button`self-start mt-2 text-primary-500 font-bold`
@@ -143,11 +143,8 @@ export default () => {
               <CardImage imageSrc={card.imageSrc} />
               <TextInfo>
                 <TitleReviewContainer>
-                  <Title>{card.title}</Title>
-                  <RatingsInfo>
-                    
+                  <Title>{card.title}</Title>   
                     <House>{card.House}</House>
-                  </RatingsInfo>
                 </TitleReviewContainer>
                 <SecondaryInfoContainer>
                   <IconWithText>
